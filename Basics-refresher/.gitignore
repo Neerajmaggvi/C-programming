@@ -1,0 +1,11 @@
+# Object files
+*.o
+
+# Executables (Linux)
+a.out
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.swp
