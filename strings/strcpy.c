@@ -17,8 +17,12 @@ int main()
 
 char *my_strcpy(char dst[],const char scr[])
 {
+    int n;
+    printf("Enter the value : ");
+    scanf("%d",&n);
+
     int i = 0;
-    while (scr[i] != '\0')
+    while (scr[i] != '\0'  && i < n)
     {
         dst[i] = scr[i];
         i++;
