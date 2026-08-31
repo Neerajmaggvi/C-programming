@@ -1,4 +1,7 @@
 #include <stdio.h>
+
+int copy_element(int *arr1, int size1, int *arr2, int size2, int *common);
+
 int main() 
 {
     int size1;
@@ -44,44 +47,7 @@ int main()
 
     int common[size1];
 
-    int count = 0;
-
-    for (int i = 0; i < size1; i++)
-    {
-        int found = 0;
-
-        for (int j = 0; j < size2; j++)
-        {
-            if(arr1[i] == arr2[j])
-            {
-                found = 1;
-                break;
-            }
-        }
-
-        int duplicate = 0;
-
-        if (found)
-        {
-
-            for (int j = 0; j < count; j++)
-            {
-                if (arr1[i] == common[j])
-                {
-                    duplicate = 1;
-                    break;
-                }
-            
-            }
-        }
-        
-        
-        if (!duplicate)
-        {
-            common[count] = arr1[i];
-            count++;
-        }       
-    }
+    int count = copy_element(arr1, size1, arr2, size2, common);
 
     printf("common array elements are ====> ");
     for (int i = 0; i < count; i++)
@@ -92,4 +58,48 @@ int main()
 
 
     return 0;
+}
+
+int copy_element(int *arr1, int size1, int *arr2, int size2, int *common)
+{
+    int count = 0;
+    
+    for (int i = 0; i < size1; i++)
+    {
+        int found = 0;
+
+        for(int j = 0; j < size2; j++)
+        {
+            if(arr1[i] == arr2[j])
+            {
+                found = 1;
+                break;
+            }
+        }
+
+        int duplicate = 0;
+
+        if(found)
+        {
+            for(int j = 0; j < count; j++)
+            {
+                if(arr1[i] == common[j])
+                {
+                    duplicate = 1;
+                    break;
+                }
+            }
+
+
+            if (!duplicate)
+            {
+                common[count] = arr1[i];
+                count++;
+            }
+        }
+        
+    }
+
+    return count;
+    
 }
