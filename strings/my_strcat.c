@@ -1,3 +1,5 @@
+/*Write your own function to concatenate two strings without using strcat()*/
+
 #include <stdio.h>
 
 char *my_strcat(char dst[], const char scr[]);
