@@ -1,41 +1,36 @@
 /*Write your own function to find the first occurrence of a character in a string.*/
 
-#include <stdio.h>
+#include<stdio.h>
 
-char * my_strcat(char *dst, char *src);
-
-int main() 
+int main()
 {
-    char dst[20] = "Hello";
-    char src[20] = " World";
+    char str[30];
 
-    char * ptr = my_strcat(dst, src);
+    printf("Enter the string : ");
+    scanf("%[^\n]",str);
 
-    printf("Dst =======> %s\n",ptr);
+    char ch;
 
-    return 0;
-}
+    printf("Enter the char : ");
+    scanf(" %c",&ch);
 
-char * my_strcat(char *dst, char *src)
-{
     int i = 0;
+    int flag = 0;
 
-    while (dst[i] != '\0')
+    while (str[i] != '\0')
     {
+        if (str[i] == ch)
+        {
+            flag = 1;
+            break;
+        }
         i++;
     }
-
-    int j = 0;
-
-    while (src[j] != '\0')
-    {
-        dst[i] = src[j];
-        i++;
-        j++;
-    }
-
-    dst[i] = '\0';
-    i = 0;
     
-    return &dst[i];
+    if (flag == 1)
+    {
+        printf("Character found at index ====> %d\n",i);
+    }
+    
+    return 0;
 }
