@@ -1,42 +1,53 @@
-#include<stdio.h>
-
-int main()
+#include <stdio.h>
+int main() 
 {
-    char str[30];
+    char str[20];
 
     printf("Enter the string : ");
     scanf("%[^\n]",str);
 
-    int length = 0;
+    int len = 0;
 
-    while(str[length] != '\0')
+    while (str[len] != '\0')
     {
-        length++;
+        len++;
     }
 
+    int found = 1;
 
-    for (int i = 0; i < length; i++)
+    // Logic to find the non repeated charater
+    for (int i = 0; i < len; i++)
     {
-        int count = 0;
+        found = 1;
 
-        for (int j = 0; j < length; j++)
+        for (int j = i - 1; j >= 0; j--)
         {
-            if (i != j && str[i] == str[j])
+            if(str[i] == str[j])
             {
-                count++;
+                found = 0;
                 break;
             }
-            
+        }
+        
+        for(int k = i + 1; k < len; k++)
+        {
+            if(str[i] == str[k])
+            {
+                found = 0;
+                break;
+            }
         }
 
-        if (count == 0)
+        if (found)
         {
-            printf("First non-repeating character ====> %c\n",str[i]);
+            printf("The 1st non repeated char ====> %c\n",str[i]);
             return 0;
-        }     
+        }
+        
+        
     }
-
-    printf("No non repating character\n");
+    printf("No non reeating character\n");
+    
     
     return 0;
 }
