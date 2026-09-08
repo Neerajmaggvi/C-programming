@@ -13,18 +13,16 @@ int main()
         len++;
     }
 
-    int found = 1;
-
     // Logic to find the non repeated charater
     for (int i = 0; i < len; i++)
     {
-        found = 1;
+        int flag = 0;
 
-        for (int j = i - 1; j >= 0; j--)
+        for (int j = 0; j < i; j++)
         {
             if(str[i] == str[j])
             {
-                found = 0;
+                flag = 1;
                 break;
             }
         }
@@ -33,12 +31,12 @@ int main()
         {
             if(str[i] == str[k])
             {
-                found = 0;
+                flag = 1;
                 break;
             }
         }
 
-        if (found)
+        if (flag == 0)
         {
             printf("The 1st non repeated char ====> %c\n",str[i]);
             return 0;
@@ -46,7 +44,7 @@ int main()
         
         
     }
-    printf("No non reeating character\n");
+    printf("No non repeating character\n");
     
     
     return 0;
