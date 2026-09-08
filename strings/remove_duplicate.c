@@ -17,7 +17,7 @@ int main()
     {
         int isduplicate = 0;
 
-        for(int j = i - 1; j >= 0; j--)
+        for(int j = 0; j < i; j++)
         {
             if(str[i] == str[j])
             {
