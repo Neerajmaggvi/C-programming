@@ -15,12 +15,12 @@ int main()
         fputc(ch, stdout);
     }
 
-    fputc('C', fp);
+   
     fputc('H', fp);
-    fputc('U', fp);
-    fputc('T', fp);
-    fputc('Y', fp);
-    fputc('A', fp);
+    fputc('E', fp);
+    fputc('L', fp);
+    fputc('L', fp);
+    fputc('O', fp);
 
     rewind(fp);
     while ((ch = fgetc(fp)) != EOF)
